@@ -5,10 +5,16 @@ import org.testng.annotations.Test;
 import pages.modules.HomePage;
 
 public class ExtractDataHomePage extends BaseTest {
-    @Test
+    HomePage homePage = new HomePage();
+    @Test()
     public void ExtractDataHomePage(){
-        HomePage homePage = new HomePage();
         homePage.verifyRedirectToHomePage();
         homePage.getDataAndSort();
     }
+
+    //For debug
+//    @Test
+//    public void avc()
+//        homePage.title();
+//    }
 }

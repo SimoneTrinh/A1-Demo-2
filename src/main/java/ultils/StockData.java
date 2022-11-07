@@ -12,8 +12,6 @@ public class StockData {
     private Double change;
     private String vol;
 
-
-
     @Override
     public String toString() {
         return "Data: [Code: " + code + " | Name: " + name + " | Last Done: " + lastDone + " | Change: " + change + " | Vol: " + vol + "]";
