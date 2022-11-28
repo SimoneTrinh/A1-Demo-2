@@ -5,7 +5,6 @@ import driver.DriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chromium.ChromiumDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
@@ -17,10 +16,9 @@ import java.time.Duration;
 
 public class BaseTest {
     public static WebDriver driver;
-
     @Parameters("browser")
     @BeforeMethod(alwaysRun = true)
-    public void setUp(@Optional("Chrome") String browser) {
+    public void setUp(String browser) {
         switch (browser) {
             case "Chrome":
                 WebDriverManager.chromedriver().setup();
@@ -51,6 +49,7 @@ public class BaseTest {
                 break;
         }
     }
+
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
         driver.quit();

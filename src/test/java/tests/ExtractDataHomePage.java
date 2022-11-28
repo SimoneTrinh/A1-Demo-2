@@ -7,7 +7,7 @@ import pages.modules.HomePage;
 public class ExtractDataHomePage extends BaseTest {
     HomePage homePage = new HomePage();
     @Test()
-    public void ExtractDataHomePage(){
+    public void ExtractData(){
         homePage.verifyRedirectToHomePage();
         homePage.getDataAndSort();
     }
