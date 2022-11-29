@@ -35,6 +35,7 @@ public class HomePageActions extends WebUI {
                 change = Double.parseDouble(changeElm.getText());
             }
             String vol = cell.findElement(volElms).getText();
+            //TODO: add keyword getText, chia nhỏ hàm
             stockData.add(new StockData(code, name, lastDone, change, vol));
         }
         stockData.sort(Comparator.comparingDouble(StockData::getChange));
