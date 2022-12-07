@@ -2,6 +2,7 @@ package pages.actions;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import pages.modules.MarketPlace;
 import ultils.StockData;
 import ultils.WebUI;
 
@@ -11,17 +12,20 @@ import java.util.Comparator;
 import java.util.List;
 
 public class HomePageActions extends WebUI {
-    public HomePageActions() {
-    }
     By tableRows = By.xpath("//div[@id='pills-active']//tbody/tr");
     By codeElms = By.cssSelector("td:nth-child(1)");
     By nameElms = By.tagName("th");
     By lastDoneElms = By.cssSelector("td:nth-child(3)");
     By changeElms = By.cssSelector("td:nth-child(4)");
     By volElms = By.cssSelector("td:nth-child(5)");
+    By market = By.xpath("//div[@id='newnav-bmp']");
+
+    public void goToMarketPlacePage(){
+        clickElement(market);
+    }
+    private final List<StockData> stockData = new ArrayList<>();
     public void getStockDataAndSort() {
-        List<WebElement> rows = get_List_Element(tableRows);
-        List<StockData> stockData = new ArrayList<>();
+        List<WebElement> rows = getListElements(tableRows);
         for (WebElement cell : rows) {
             String code = cell.findElement(codeElms).getText();
             String name = cell.findElement(nameElms).getText();

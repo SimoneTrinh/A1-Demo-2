@@ -6,8 +6,6 @@ import pages.actions.HomePageActions;
 
 
 public class HomePage extends HomePageActions {
-    public HomePage() {
-    }
 
     By StockTable = By.xpath("//div[@id='pills-active']//tbody");
 
